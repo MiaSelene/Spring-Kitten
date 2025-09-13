@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmt8031k5mx83"]
+
+[ext_resource type="PackedScene" uid="uid://g04iahxco1mi" path="res://player.tscn" id="1_50ymh"]
+
+[node name="main" type="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.972034, -0.0969016, 0.213918, 0.0210818, 0.943229, 0.331473, -0.233894, -0.317693, 0.918893, -7.37808, 0.542224, 3.86331)
+fov = 79.867
+
+[node name="Player" parent="." instance=ExtResource("1_50ymh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6519, 0.28344, 0.773928)
+clumsiness = 15.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11286, 0.457395, -0.649183)
+light_energy = 0.241
+light_indirect_energy = 10.697
+light_volumetric_fog_energy = 2.485
+light_size = 0.727
+light_specular = 5.51
+omni_range = 57.166
+omni_attenuation = 0.798
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9911, 0.457395, -6.7093)
+light_energy = 0.241
+light_indirect_energy = 10.697
+light_volumetric_fog_energy = 2.485
+light_size = 0.727
+light_specular = 5.51
+omni_range = 57.166
+omni_attenuation = 0.798
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11286, 0.457395, -8.22389)
+light_energy = 0.241
+light_indirect_energy = 10.697
+light_volumetric_fog_energy = 2.485
+light_size = 0.727
+light_specular = 5.51
+omni_range = 57.166
+omni_attenuation = 0.798

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://g04iahxco1mi"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_chxn4"]
+[ext_resource type="PackedScene" uid="uid://deia67nthin8s" path="res://art/cat.fbx" id="1_hyooe"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_qmnhi"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_p7wxi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_heau8"]
+size = Vector3(3, 5, 7)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_chxn4")
+clumsiness = 0.2
+
+[node name="lower bound" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000428796, 0.224041, -0.00303102)
+top_level = true
+mesh = SubResource("ImmediateMesh_qmnhi")
+skeleton = NodePath("../Pivot")
+
+[node name="upper bound" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000428796, 0.224041, -0.00303102)
+top_level = true
+mesh = SubResource("ImmediateMesh_p7wxi")
+skeleton = NodePath("../Pivot")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="cat" parent="Pivot" instance=ExtResource("1_hyooe")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_heau8")
