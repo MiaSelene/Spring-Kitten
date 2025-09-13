@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmt8031k5mx83"]
+[gd_scene load_steps=5 format=3 uid="uid://bmt8031k5mx83"]
 
 [ext_resource type="PackedScene" uid="uid://g04iahxco1mi" path="res://player.tscn" id="1_50ymh"]
 [ext_resource type="PackedScene" uid="uid://ec1yptnfwyr8" path="res://wall.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://i7flwia4cvdq" path="res://floor.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" path="res://floor.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://5xyh2w4y7ie3" path="res://node_3d.tscn" id="4_1bvp3"]
 
 [node name="main" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource("1_50ymh")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_50ymh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5577, 0.28344, 4.3701)
 clumsiness = 15.0
 
@@ -76,3 +77,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.35, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.35, 0, 1.35379)
 
 [node name="Floor" parent="." instance=ExtResource("3_1bvp3")]
+
+[node name="win" parent="." instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72256, 1.56153, 0.583497)

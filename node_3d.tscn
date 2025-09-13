@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://5xyh2w4y7ie3"]
+
+[ext_resource type="Script" uid="uid://dsf010cvd2vps" path="res://area_3d.gd" id="1_a202f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_noarx"]
+height = 0.1
+radius = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a202f"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.1
+
+[node name="win" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("win_popup")]
+script = ExtResource("1_a202f")
+win_popup = NodePath("TextEdit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_noarx")
+
+[node name="TextEdit" type="TextEdit" parent="Area3D"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "WIIINN!!!"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("CylinderMesh_a202f")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
