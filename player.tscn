@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://g04iahxco1mi"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_chxn4"]
+[ext_resource type="Script" uid="uid://c1b5jojuy86f8" path="res://player.gd" id="1_chxn4"]
 [ext_resource type="PackedScene" uid="uid://deia67nthin8s" path="res://art/cat.fbx" id="1_hyooe"]
 
 [sub_resource type="ImmediateMesh" id="ImmediateMesh_qmnhi"]
