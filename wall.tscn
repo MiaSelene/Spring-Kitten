@@ -1,17 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ec1yptnfwyr8"]
-
-[ext_resource type="Script" uid="uid://ckegj86ijghd8" path="res://wall.gd" id="1_jeuul"]
+[gd_scene load_steps=3 format=3 uid="uid://ec1yptnfwyr8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qjbdi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4p5fe"]
 
 [node name="wall" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245129, 0.914996)
-script = ExtResource("1_jeuul")
-wall_size = Vector3(30, 3, 0.2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 0.3, 0, 1, 0)
 mesh = SubResource("BoxMesh_qjbdi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]

@@ -1,19 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmt8031k5mx83"]
+[gd_scene load_steps=4 format=3 uid="uid://bmt8031k5mx83"]
 
 [ext_resource type="PackedScene" uid="uid://g04iahxco1mi" path="res://player.tscn" id="1_50ymh"]
+[ext_resource type="PackedScene" uid="uid://ec1yptnfwyr8" path="res://wall.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://i7flwia4cvdq" path="res://floor.tscn" id="3_1bvp3"]
 
 [node name="main" type="Node"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.972034, -0.0969016, 0.213918, 0.0210818, 0.943229, 0.331473, -0.233894, -0.317693, 0.918893, -7.37808, 0.542224, 3.86331)
-fov = 79.867
-
 [node name="Player" parent="." instance=ExtResource("1_50ymh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6519, 0.28344, 0.773928)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5577, 0.28344, 4.3701)
 clumsiness = 15.0
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.972034, -0.0969014, 0.213918, 0.0210818, 0.943229, 0.331473, -0.233894, -0.317693, 0.918893, -0.28388, 0.797739, 5.39749)
+fov = 84.4
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11286, 0.457395, -0.649183)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98134, 0.457395, 2.94699)
 light_energy = 0.241
 light_indirect_energy = 10.697
 light_volumetric_fog_energy = 2.485
@@ -23,7 +25,7 @@ omni_range = 57.166
 omni_attenuation = 0.798
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9911, 0.457395, -6.7093)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8969, 0.457395, -3.11313)
 light_energy = 0.241
 light_indirect_energy = 10.697
 light_volumetric_fog_energy = 2.485
@@ -33,7 +35,7 @@ omni_range = 57.166
 omni_attenuation = 0.798
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11286, 0.457395, -8.22389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98134, 0.457395, -4.62772)
 light_energy = 0.241
 light_indirect_energy = 10.697
 light_volumetric_fog_energy = 2.485
@@ -41,3 +43,36 @@ light_size = 0.727
 light_specular = 5.51
 omni_range = 57.166
 omni_attenuation = 0.798
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="wall" parent="walls" instance=ExtResource("2_h2yge")]
+
+[node name="wall2" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="wall3" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="wall8" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.72486)
+
+[node name="wall9" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5.72486)
+
+[node name="wall10" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5.72486)
+
+[node name="wall4" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.65, 0, 1.35379)
+
+[node name="wall5" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.65, 0, 4.35379)
+
+[node name="wall6" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.35, 0, 4.35379)
+
+[node name="wall7" parent="walls" instance=ExtResource("2_h2yge")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.35, 0, 1.35379)
+
+[node name="Floor" parent="." instance=ExtResource("3_1bvp3")]
